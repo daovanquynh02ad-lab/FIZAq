@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Цитаты дня</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: white;
+      text-align: center;
+    }
+    .container {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 40px;
+      border-radius: 15px;
+      max-width: 600px;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 20px;
+      border: none;
+      background-color: white;
+      color: #333;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Случайная цитата дня</h1>
+    <p id="quote">Нажми кнопку, чтобы получить вдохновение!</p>
+    <button onclick="generateQuote()">Новая цитата</button>
+  </div>
+
+  <script>
+    const quotes = [
+      "Не ждите. Время никогда не будет подходящим. — Наполеон Хилл",
+      "Будь изменением, которое хочешь видеть в мире. — Махатма Ганди",
+      "Секрет продвижения вперёд — начать. — Марк Твен",
+      "Ошибки — это доказательство того, что ты пытаешься.",
+      "Сложности — это ступеньки к росту."
+    ];
+
+    function generateQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      document.getElementById("quote").textContent = quotes[randomIndex];
+    }
+  </script>
+</body>
+</html>
